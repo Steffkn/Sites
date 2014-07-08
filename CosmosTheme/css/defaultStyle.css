@@ -1,0 +1,155 @@
+﻿/* have to make less files*/
+/* Default initial settings*/
+html, body, ul, li, div, span, section, nav, aside, article, header, footer, a, img, p, input {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 12px;
+    font-family: Consolas;
+    background: url('../images/Snow-Leopard-Server-wallpaper.jpeg');
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+    ul li a {
+        display: inline-block;
+    }
+
+li > ul {
+    display: none;
+}
+
+#wrapper {
+    width: 900px;
+    margin: 0 auto;
+}
+
+/* additional settings */
+#main-menu {
+	background-color: rgba(10,10,10,0.2);
+}
+
+    #main-menu ul {
+        height: 70px;
+        position: relative;
+    }
+
+    #main-menu > ul li {
+        display: inline-block;
+    }
+
+        #main-menu > ul li a:hover {
+            border-width: 35px;
+			color: black;
+            height: 0px;
+        }
+
+        #main-menu > ul li a {
+            width: 110px;
+            height: 30px;
+            padding: 0 20px;
+            font-size: 1.6em;
+            line-height: 35px;
+            color: #ddd;
+            border-bottom: 5px solid #5400c0;
+            -webkit-transition: .2s all ease-in-out;
+            -moz-transition: .2s all ease-in-out;
+            -o-transition: .2s all ease-in-out;
+            transition: .2s all ease-in-out;
+        }
+
+    #main-menu ul li:hover ul {
+        display: inline-block;
+        position: absolute;
+        top: 35px;
+		left: 0;
+    }
+
+        #main-menu ul li:hover ul li {
+            display: inline-block;
+        }
+
+/* coloring the li's border*/
+#main-menu ul li a {                border-color: #5400c0; }
+#main-menu ul li+li a {             border-color: #0877d3; }
+#main-menu ul li+li+li a {          border-color: #0b8b02; }
+#main-menu ul li+li+li+li a{        border-color: #a9f318; }
+#main-menu ul li+li+li+li+li a{     border-color: #fafe07; }
+#main-menu ul li+li+li+li+li+li a{  border-color: #f77a02; }
+/* 0b8b02 0213c3 0775d4 15c4df 0b8b02 a9f318 fafe07 fdb105 f77a02 fb0200 */
+#main-menu ul ul li a {             border-color: #5400c0; }
+#main-menu ul ul li+li a {          border-color: #0877d3; }
+#main-menu ul ul li+li+li a {       border-color: #0b8b02; }
+#main-menu ul ul li+li+li+li a{     border-color: #a9f318; }
+#main-menu ul ul li+li+li+li+li a{  border-color: #fafe07; }
+#main-menu ul ul li+li+li+li+li+li a{  border-color: #f77a02; }
+
+#slider {
+    position: relative;
+}
+
+    #slider #container {
+        margin: 0 auto;
+    }
+
+        #slider #container .slide {
+            position: relative;
+        }
+
+            #slider #container .slide .image {
+                position: absolute;
+            }
+
+                #slider #container .slide .image img {
+                    width: 900px;
+                    height: 420px;
+                }
+
+            #slider #container .slide .text {
+                position: absolute;
+                top: 350px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0,0,0,0.5);
+            }
+
+                #slider #container .slide .text p {
+                    padding: 10px;
+                    color: white;
+                    font-size: 1.4em;
+                }
+
+    #slider #prev-slide , #slider #next-slide {
+        position: absolute;
+        font-size: 30px;
+        width: 50px;
+        height: 50px;
+    }
+	#slider #prev-slide{
+		top: 180px;
+		left: -30px;
+		background: url('../images/prev-next.png') 0px 0px no-repeat;
+		background-size: 100px 100px;
+	}
+	#slider #prev-slide:hover{
+		background: url('../images/prev-next.png') 0px -50px no-repeat;
+		background-size: 100px 100px;
+	}
+    #slider #next-slide {
+        top: 180px;
+        right: -30px;
+		background: url('../images/prev-next.png') -50px 0px no-repeat;
+		background-size: 100px 100px;
+    }
+	#slider #next-slide:hover{
+		background: url('../images/prev-next.png') -50px -50px no-repeat;
+		background-size: 100px 100px;
+	}

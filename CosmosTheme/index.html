@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Cosmos theme</title>
+    <!-- Styles -->
+    <link href="css/defaultStyleLess.min.css" rel="stylesheet" />
+    <!-- Scripts -->
+    <script src="js/libs/handlebars-v1.3.0.js"></script>
+    <script src="js/libs/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <!-- This alignment fixes a bug with the gab between <li> elements (</li><li> - on same row) -->
+            <nav id="main-menu">
+                <ul>{{#if subMenuItems}}<li><a href="{{menuURL}}">{{menuItem}}</a>
+                        <ul><li>{{#each subMenuItems}}<a href="{{subMenuURL}}">{{subMenuItem}}</a></li><li>{{/each}}</ul>{{else}}</li><li><a href="{{menuURL}}">{{menuItem}}</a>{{/if}}
+                </ul>
+            </nav>
+
+        </header>
+
+        <section id="slider">
+            <div id="container">
+                <div class="slide">
+                    <div class="image">
+                        <img src="{{imageURL}}" alt="{{imageAlt}}" slide-number="{{@index}}" />
+                    </div>
+                    <div class="text">
+                        <p>{{text}}</p>
+                    </div>
+                </div>
+            </div>
+            <div id="prev-slide"></div>
+            <div id="next-slide"></div>
+        </section>
+
+
+    </div>
+
+    <script src="js/menuGenerator.js"></script>
+    <script src="js/sliderGenerator.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+</html>

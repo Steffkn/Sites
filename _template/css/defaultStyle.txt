@@ -1,0 +1,56 @@
+/* have to make less files*/
+/* Default initial settings*/
+html, body, ul, li, div, span, section, nav, aside, article, header, footer, a, img, p, input {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 12px;
+    font-family: Consolas;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+ul {
+    list-style-type: none;
+}
+
+    ul li a {
+        display: inline-block;
+    }
+
+li > ul {
+    display: none;
+}
+
+#wrapper {
+    /* background: url('../images/Snow-Leopard-Server-wallpaper.jpeg');*/
+    width: 900px;
+    margin: 0 auto;
+}
+
+/* additional settings */
+#main-menu {
+}
+
+#main-menu ul {
+    position: relative;
+}
+
+    #main-menu ul li {
+        display: inline-block;
+    }
+
+        #main-menu ul li:hover ul {
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+        }
+
+            #main-menu ul li:hover ul li {
+                display: block;
+            }
