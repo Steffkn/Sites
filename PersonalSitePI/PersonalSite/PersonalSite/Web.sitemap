@@ -1,8 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <siteMap xmlns= "http://schemas.microsoft.com/aspnet/sitemap-file-1.0">
-  <siteMapNode title="Home" description="Home page" url="~/default.aspx">
-    <siteMapNode title="About" description="About page" url="~/about.aspx"></siteMapNode>
-    <siteMapNode title="Users" description="All users" url="~/users.aspx"></siteMapNode>
+  <siteMapNode title="Personal Site" description="Personal Site" url="~/">
+    <siteMapNode title="Home" description="Home page" url="~/home.aspx"></siteMapNode>
+    <siteMapNode title="Wall" description="Type one the wall" url="~/wall.aspx"></siteMapNode>
+    <siteMapNode title="Articles" description="Articles page" url="~/articles.aspx">
+      <siteMapNode title="Patterns" description="Patterns page" url="~/patterns.aspx"></siteMapNode>
+    </siteMapNode>
+    <siteMapNode title="Admin Panel" description="Administration panel" url="~/Admin/AdminPanel.aspx">
+      <siteMapNode title="Users" description="All users" url="~/Admin/users.aspx"></siteMapNode>
+      <siteMapNode title="Roles" description="Manage user roles" url="~/Admin/roles.aspx"></siteMapNode>
+    </siteMapNode>
   </siteMapNode>
 </siteMap>

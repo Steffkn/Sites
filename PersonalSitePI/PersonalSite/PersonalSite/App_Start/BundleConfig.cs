@@ -41,6 +41,10 @@ namespace PersonalSite
                     Path = "~/Scripts/respond.min.js",
                     DebugPath = "~/Scripts/respond.js",
                 });
+
+            // CSS Bundle
+            bundles.Add(new ScriptBundle("~/bundles/css").Include(
+                    "~/Content/css/defaultStyles.css"));
         }
     }
 }

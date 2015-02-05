@@ -1,63 +1,59 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PersonalSite.SiteMaster" %>
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
 
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
-    <%-- <webopt:bundlereference runat="server" path="~/Content/css" />--%>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/css/defaultStyles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <form runat="server">
+    <div id="wrapper">
+        <form runat="server">
+            <header>
+                <%--<a runat="server" href="~/">Personal Site</a>--%>
+                <nav class="menu">
+                    <asp:Menu runat="server" ID="NavigationMenu"
+                        DataSourceID="SiteMapDataSource"
+                        StaticDisplayLevels="1"
+                        IncludeStyleBlock="false"
+                        MaximumDynamicDisplayLevels="3">
+                    </asp:Menu>
+                    <time><%: DateTime.Now.ToShortTimeString() %> </time>
+                    <div id="logins">
+                        <asp:LoginView runat="server" ViewStateMode="Disabled">
+                            <AnonymousTemplate>
+                                <ul>
+                                    <li><a runat="server" href="~/Account/Register">Register</a></li>
+                                    <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                </ul>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <ul>
+                                    <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                    <li>
+                                        <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    </li>
+                                </ul>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                    </div>
+                </nav>
+                <asp:SiteMapPath ID="SiteMapMain" runat="server" PathSeparator=">>">
+                </asp:SiteMapPath>
+            </header>
 
-        <div>
-            <a runat="server" href="~/">Personal Site</a>
-            <%--<ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                    </ul>--%>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
 
-            <asp:Menu runat="server" ID="NavigationMenu" 
-                EnableViewState="true" SkipLinkText="" 
-                IncludeStyleBlock="false"
-                StaticDisplayLevels="2" DataSourceID="SiteMapDataSource" 
-                MaximumDynamicDisplayLevels="2">
-            </asp:Menu>
-            <asp:SiteMapPath ID="SiteMapMain" runat="server" ParentLevelsDisplayed="0"></asp:SiteMapPath>
-
-            <asp:LoginView runat="server" ViewStateMode="Disabled">
-                <AnonymousTemplate>
-                    <ul>
-                        <li><a runat="server" href="~/Account/Register">Register</a></li>
-                        <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                    </ul>
-                </AnonymousTemplate>
-                <LoggedInTemplate>
-                    <ul>
-                        <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
-                        <li>
-                            <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                        </li>
-                    </ul>
-                </LoggedInTemplate>
-            </asp:LoginView>
-        </div>
-
-        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        </asp:ContentPlaceHolder>
-
-        <footer>
-            <p>&copy; <%: DateTime.Now.Year %> Personal Site </p>
-        </footer>
-    </form>
-    <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> Personal Site </p>
+            </footer>
+        </form>
+        <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" ShowStartingNode="False" />
+    </div>
 </body>
 </html>
