@@ -1,0 +1,201 @@
+﻿html, body, header, section, article, footer, div, span, time, ul, li, a, input, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', Arial;
+    font-size: 14px;
+}
+
+header {
+    width: 100%;
+    background-color: #2b2b2b;
+}
+
+h1, h2 {
+    margin: 10px;
+}
+
+h3, h4, h5, h6 {
+    margin: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+time {
+    font-style: italic;
+    font-size: 12px;
+}
+nav {
+    width: 960px;
+    margin: 0 auto;
+    background-color: #2b2b2b;
+    text-align: right;
+}
+
+    nav div {
+        display: inline-block;
+    }
+
+    nav a {
+        display: inline-block;
+        padding: 5px 10px;
+        line-height: 25px;
+        color: white;
+        width: 95px;
+        font-size: 18px;
+    }
+
+        nav a:hover {
+        }
+
+#NavigationMenu {
+    display: inline-block;
+}
+
+    #NavigationMenu > ul, #NavigationMenu > ul li {
+        display: inline-block;
+        position: relative;
+        text-align: left;
+    }
+
+    #NavigationMenu ul li > ul {
+        display: block;
+        background-color: #2b2b2b;
+        position: absolute !important;
+        top: 35px !important;
+        left: 0 !important;
+    }
+
+.login, .login li, .manageAccount, .manageAccount li {
+    display: inline-block;
+}
+
+#mainContent, #mainFooter {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#mainContent {
+    vertical-align: top;
+}
+
+#mainFooter {
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #2b2b2b;
+    color: white;
+    text-align: center;
+}
+/* Home page */
+
+.categoryPreview {
+    display: inline-block;
+    margin: 5px 0;
+    vertical-align: top;
+    width: 315px;
+    height: 120px;
+    background-color: #e3e5ff;
+    border-bottom: 1px solid black;
+}
+
+    .categoryPreview ul {
+        display: block;
+        margin: 10px;
+    }
+
+    .categoryPreview a {
+        color: black;
+    }
+
+        .categoryPreview a:hover {
+            color: #333;
+        }
+
+.empty {
+    font-style: italic;
+    margin: 10px;
+}
+
+/* Users */
+
+.table {
+    margin: 10px auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+    .table th, .table td {
+        border: 1px solid black;
+        padding: 5px;
+        width: 160px;
+    }
+
+    .table thead {
+        background-color: #cbd0ff;
+        color: black;
+    }
+
+        .table thead a {
+            color: black;
+        }
+
+    .table tbody tr:nth-child(2n) {
+        background-color: #E7f8ff;
+    }
+
+    .table tfoot {
+        background-color: #cbd0ff;
+        text-align: center;
+    }
+
+/* Wall */
+.messages {
+    width: 960px;
+    background-color: #e3e5ff;
+}
+
+    .messages div:nth-child(2n) {
+        background-color: #cbd0ff;
+    }
+
+.messagebox {
+    padding: 10px;
+    max-width: 960px;
+}
+
+.newMessage {
+    padding: 10px;
+    vertical-align: top;
+}
+    .newMessage textarea {
+        max-width: 880px;
+        width: 880px;
+    }
+
+.btn {
+    display: inline-block;
+    line-height: 48px;
+    width: 48px;
+    color: black;
+    background-color: #3f7eff;
+    vertical-align: top;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    font-size: 18px;
+    font-weight: bold;
+}
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+}
