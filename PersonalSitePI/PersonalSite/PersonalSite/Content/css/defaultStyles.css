@@ -1,0 +1,79 @@
+﻿html, body, section, header, footer, div, span, time, nav, a, ul, ol, li, nav, aside, table, th, tr, td, thead, tfoot, tbody, hgroup, h1, h2, h3, h4, h5, h6, input, button {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+    position: relative;
+}
+
+    ul li > ul {
+        display: none;
+        background-color: #888;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+    }
+
+
+a {
+    text-decoration: none;
+}
+
+input {
+    margin: 5px 0;
+}
+
+    input[type=submit] {
+        padding: 5px;
+    }
+
+#wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.menu {
+    background-color: #555;
+}
+
+    .menu div {
+        display: inline-block;
+    }
+
+    .menu time {
+        display: inline-block;
+        color: white;
+    }
+
+    .menu ul {
+        display: inline-block;
+    }
+
+        .menu ul li {
+            display: inline-block;
+        }
+
+            .menu ul li a {
+                display: inline-block;
+                min-width: 60px;
+                color: white;
+                padding: 3px 5px;
+                text-align: center;
+            }
+
+                .menu ul li a:hover {
+                    background-color: white;
+                    color: black;
+                }
+
+
+    .menu .logins {
+        width: 100%;
+        text-align: right;
+    }
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+}
