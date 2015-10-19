@@ -3,17 +3,22 @@
 <asp:Content ID="ArticleContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <asp:FormView runat="server" ID="FormViewArticle"
-        ItemType="PersonalSite.Models.Article" SelectMethod="FormViewArticle_GetItem">
+        ItemType="PersonalSite.Models.Article" 
+        SelectMethod="FormViewArticle_GetItem"
+        >
         <ItemTemplate>
-            <h2><%#: Item.Title %></h2>
-            <div>
-                <asp:HyperLink NavigateUrl='<%#: string.Format("~/user?id=", Item.AuthorID) %>' runat="server" />
-                <p>Author: <%#: this.dBContext.Users.FirstOrDefault(u => u.Id == Item.AuthorID).UserName%>
+            <div class="article">
+                <h2><%#: Item.Title %></h2>
+                <p>
+                    Author: 
+                        <asp:HyperLink runat="server" CssClass="author"
+                            NavigateUrl='<%#: string.Format("~/user?id={0}", Item.AuthorID)%>'
+                            Text="<%#: this.dBContext.Users.FirstOrDefault(u => u.Id == Item.AuthorID).UserName%>" />
                     created on: <time><%#: Item.DateCreated %></time>
-                    <span>category: <%#: Item.Category.Name %></span>
+                    <div>category: <span><%#: Item.Category.Name %></span></div>
                 </p>
+                <p class="articleContent"><%#: Item.Content %></p>
             </div>
-            <p><%#: Item.Content %></p>
         </ItemTemplate>
     </asp:FormView>
 </asp:Content>

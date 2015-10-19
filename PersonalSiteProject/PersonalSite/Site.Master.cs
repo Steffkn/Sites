@@ -76,5 +76,4 @@ namespace PersonalSite
             Context.GetOwinContext().Authentication.SignOut();
         }
     }
-
 }

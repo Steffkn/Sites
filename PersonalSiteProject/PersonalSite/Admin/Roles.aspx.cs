@@ -39,9 +39,13 @@ namespace PersonalSite.Admin
                 CheckBox RoleCheckBox = ri.FindControl("RoleCheckBox") as CheckBox;
                 // See if RoleCheckBox.Text is in selectedUsersRoles 
                 if (selectedUsersRoles.Contains<string>(RoleCheckBox.Text))
+                {
                     RoleCheckBox.Checked = true;
+                }
                 else
+                {
                     RoleCheckBox.Checked = false;
+                }
             }
         }
         protected void DropDownListUserList_SelectedIndexChanged(object sender, EventArgs e)
@@ -66,11 +70,8 @@ namespace PersonalSite.Admin
 
             // Get the currently selected user and role 
             string selectedUserName = DropDownListUserList.SelectedValue;
-            
             var UserManager = new UserManager<AppUser>(new UserStore<AppUser>(dBContext));
-
             string[] selectedUsersRoles = UserManager.GetRoles(selectedUserName).ToArray();
-
             string roleName = RoleCheckBox.Text;
 
             // Determine if we need to add or remove the user from this role 
@@ -78,16 +79,11 @@ namespace PersonalSite.Admin
             {
                 // Add the user to the role 
                 UserManager.AddToRole(selectedUserName, roleName);
-                // Display a status message 
-                //ActionStatus.Text = string.Format("User {0} was added to role {1}.", selectedUserName, roleName); 
             }
             else
             {
                 // Remove the user from the role 
                 UserManager.RemoveFromRole(selectedUserName, roleName);
-                // Display a status message 
-                //ActionStatus.Text = string.Format("User {0} was removed from role {1}.", selectedUserName, roleName); 
-
             }
         }
     }

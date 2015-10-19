@@ -13,7 +13,9 @@
             <ItemTemplate>
                 <div class="messagebox">
                     By 
-                    <asp:HyperLink NavigateUrl='<%#: string.Format("~/user?id={0}", Item.AuthorID) %>' runat="server" Text="<%#: Item.AuthorName %>" />
+                    <asp:HyperLink runat="server" CssClass="author"
+                        NavigateUrl='<%#: string.Format("~/user?id={0}", Item.AuthorID) %>' 
+                        Text="<%#: Item.AuthorName %>" />
                      on <time><%#: Item.DatePosted %></time>
                     <div class="message">
                        <p><%#: Item.Message %></p>
@@ -27,6 +29,9 @@
                     <asp:LinkButton runat="server" ID="ButtonInsert" Text="Send" CommandName="Insert" CssClass="btn" />
                 </div>
             </InsertItemTemplate>
+            <EmptyItemTemplate>
+                <p>There are no wall post yet. Be the first to write something on the wall :)</p>
+            </EmptyItemTemplate>
         </asp:ListView>
     </div>
 </asp:Content>
