@@ -33,6 +33,11 @@ time {
     font-style: italic;
     font-size: 12px;
 }
+
+input{
+    margin: 5px 0;
+}
+
 nav {
     width: 960px;
     margin: 0 auto;
@@ -97,6 +102,7 @@ nav {
     color: white;
     text-align: center;
 }
+
 /* Home page */
 
 .categoryPreview {
@@ -185,17 +191,23 @@ nav {
 
 .btn {
     display: inline-block;
-    line-height: 48px;
-    width: 48px;
-    color: black;
-    background-color: #3f7eff;
+    line-height: 28px;
+    padding: 10px;
     vertical-align: top;
     text-align: center;
     border-radius: 10px;
     border: 1px solid #aaa;
     font-size: 18px;
     font-weight: bold;
+    color: black;
+    background-color: #3f7eff;
 }
+
+/* Manage account */
+#passwordForm  div {
+    text-align:left;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
 }

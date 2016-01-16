@@ -2,14 +2,15 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ListView runat="server" ID="ListViewCategories"
-        ItemType="PersonalSite.Models.Category" SelectMethod="ListViewCategories_GetData"
+        ItemType="PersonalSite.Models.Category" 
+        SelectMethod="ListViewCategories_GetData"
         GroupItemCount="3">
         <GroupTemplate>
             <asp:PlaceHolder runat="server" ID="itemPlaceHolder" />
         </GroupTemplate>
         <ItemTemplate>
             <div class="categoryPreview">
-                <h2><%#: Item.Name %></h2>
+                <h2><asp:HyperLink runat="server" NavigateUrl='<%#: string.Format("~/articles?id={0}", Item.ID) %>' Text="<%#: Item.Name %>" /></h2>
                 <asp:ListView runat="server" ID="ListViewArticles"
                     ItemType="PersonalSite.Models.Article"
                     DataSource="<%# Item.Articles %>">
@@ -20,8 +21,12 @@
                     </LayoutTemplate>
                     <ItemTemplate>
                         <li>
-                            <asp:HyperLink NavigateUrl='<%#: string.Format("~/Article?id={0}",Item.Id) %>' runat="server"
-                                Text="<%#: Item.Title %>" />
+                            <asp:HyperLink runat="server" CssClass="articleTitle"
+                                NavigateUrl='<%#: string.Format("~/Article?id={0}",Item.Id) %>' 
+                                Text="<%#: Item.Title %>" /> - 
+                            <asp:HyperLink runat="server" CssClass="author"
+                                NavigateUrl='<%#: string.Format("~/User?id={0}",Item.AuthorID) %>' 
+                                Text="<%#: this.dBContext.Users.FirstOrDefault(u => u.Id == Item.AuthorID).UserName %>" />
                         </li>
                     </ItemTemplate>
                     <EmptyDataTemplate>

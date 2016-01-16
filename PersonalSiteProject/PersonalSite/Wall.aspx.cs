@@ -19,7 +19,10 @@ namespace PersonalSite
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // to draw or not the insert template if the user is not logged in
+            	if (!User.Identity.IsAuthenticated) {
+                    ListViewWallMassages.InsertItemPosition = InsertItemPosition.None;
+	            }
         }
 
         // The return type can be changed to IEnumerable, however to support
@@ -35,20 +38,23 @@ namespace PersonalSite
 
         public void ListViewWallMassages_InsertItem()
         {
-            var item = new WallMessage();
-            var userId = User.Identity.GetUserId();
-            var userName = User.Identity.GetUserName();
-
-            item.AuthorID = userId;
-            item.AuthorName = userName;
-            item.DatePosted = DateTime.Now;
-
-            TryUpdateModel(item);
-            if (ModelState.IsValid)
+            if (User.Identity.IsAuthenticated)
             {
-                // Save changes 
-                this.dBContext.WallMessages.Add(item);
-                this.dBContext.SaveChanges();
+                var item = new WallMessage();
+                var userId = User.Identity.GetUserId();
+                var userName = User.Identity.GetUserName();
+
+                item.AuthorID = userId;
+                item.AuthorName = userName;
+                item.DatePosted = DateTime.Now;
+
+                TryUpdateModel(item);
+                if (ModelState.IsValid)
+                {
+                    // Save changes 
+                    this.dBContext.WallMessages.Add(item);
+                    this.dBContext.SaveChanges();
+                }
             }
         }
     }

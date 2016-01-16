@@ -19,6 +19,7 @@ namespace PersonalSite.Models
         public IDbSet<Category> Categories { get; set; }
         
         public IDbSet<Article> Articles { get; set; }
+
         public IDbSet<WallMessage> WallMessages { get; set; }
     }
 }

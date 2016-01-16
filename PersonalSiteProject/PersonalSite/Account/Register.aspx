@@ -21,7 +21,7 @@
         <div>
             <asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label>
             <div>
-                <asp:TextBox runat="server" ID="Password" TextMode="Password"/>
+                <asp:TextBox runat="server" ID="Password" TextMode="Password" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
                     ErrorMessage="The password field is required." ForeColor="Red" />
             </div>
@@ -44,7 +44,7 @@
         </div>
         <div>
             <div>
-                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" />
+                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn" />
             </div>
         </div>
     </div>

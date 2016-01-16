@@ -19,7 +19,10 @@ namespace PersonalSite.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+                //// Validate the user password
+                //var manager = new UserManager();
+                //manager.IsInRoleAsync(User.IsInRole("admin");
+                //AppUser user = manager.Find(UserName.Text, Password.Text);
         }
 
         // The return type can be changed to IEnumerable, however to support

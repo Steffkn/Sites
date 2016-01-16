@@ -10,9 +10,7 @@
     <div>
         <section id="passwordForm">
             <asp:PlaceHolder runat="server" ID="setPassword" Visible="false">
-                <p>
-                    You do not have a local password for this site. Add a local
-                        password so you can log in without an external login.
+                <p>You do not have a local password for this site. Add a local password so you can log in without an external login.
                 </p>
                 <div>
                     <h4>Set Password Form</h4>
@@ -50,7 +48,7 @@
 
             <asp:PlaceHolder runat="server" ID="changePasswordHolder" Visible="false">
                 <p>You're logged in as <strong><%: User.Identity.GetUserName() %></strong>.</p>
-                <div>
+                <div id="passwordChange">
                     <h4>Change Password Form</h4>
                     <hr />
                     <asp:ValidationSummary runat="server" ShowModelStateErrors="true" />

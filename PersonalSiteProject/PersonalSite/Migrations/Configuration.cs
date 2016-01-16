@@ -5,7 +5,6 @@ namespace PersonalSite.Migrations
     using PersonalSite.Models;
     using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
@@ -54,7 +53,7 @@ namespace PersonalSite.Migrations
                 //Create User=admin with password=123456
                 var user = new AppUser() { UserName = name, RegistrationDate = DateTime.Now, Email = "admin@admin.admin" };
                 var adminresult = UserManager.Create(user, password);
-                userId=user.Id;
+                userId = user.Id;
                 //Add User admin to Role admin
                 if (adminresult.Succeeded)
                 {
